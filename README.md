@@ -120,3 +120,16 @@ mlx_put_image_to_window는 디스플레이에 연결하여 원하는 위치에 �
 
 <반환값>
 - 로드 실패할 시 NULL을 출력
+
+
+# mlx_get_data_addr
+
+```
+mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian)
+```
+mlx_get_data_addr()은 생성된 이미지에 대한 정보를 리턴해서 사용자가 나중에 이미지를 수정할 수 있도록 합니다.
+좀 더 자세하게 말하면 mlx_put_image_to_window를 통해서 이미지를 출력 시켰지만 사용자는 이미지를 위치를 계속적으로 변환을 주고 싶을 수도, 혹은 이미지가 바라보는 방향, 크기를 변경하고 싶을 수도 있습니다.
+그런경우 이 함수를 사용하여 변화를 줍니다.
+
+<매개변수>
+- 
