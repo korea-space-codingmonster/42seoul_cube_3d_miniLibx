@@ -1,18 +1,19 @@
 # Project Title / 42seoul_cube3d_miniLibx 사용법
 
-## contents  
+# contents  
 
 1. 소개
+2. 시작함수
+3. 윈도우(디스플레이) 관리 함수
 
-
-## 소개
+# 소개
 
 42seoul subject 중 cube_3d라는 과제가 있으며 이 과제를 수행하기 위해서는 miniLibx 사용법을 알아야하며 
 miniLibx가 제공하는 함수들의 사용법을 알아야지 cube_3d를 하나하나 만듬에 있어서 로직 구조를 어떻게 해야할지 설계를 할 수 있다.
 그럼으로 제공하는 함수에 대해 자세히 정리해보고자 따로 사용법에 대해서 설명하려한다.
 
 
-## 시작함수
+# 시작함수
 
 mimiLibx 라이브러리로 작업을 수행하려면 먼저 mlx_init()함수를 실행해야한다. mlx_init()함수는 mlx.h 헤더를 통해서 접근 할 수 있다.
 그래픽과 소프트웨어(내가 생성한 코드)를 연결해주는 함수이며 모든 함수의 최상위 함수라고 생각해도 무방하다.
@@ -39,9 +40,9 @@ int     main(void)
 만약 이 코드를 실행하면 아무일도 일어나지 않습니다. 왜냐면 이 함수는 소스코드와 디스플레이를 연결만 할뿐, 디스틀레이를 출력하는 함수는 따로 있기 때문입니다.
 만약, 디스플레이를 출력하고자 한면 mlx_new_window()함수를 사용해야합니다.
 
-## 윈도우(디스플레이) 관리 함수
+# 윈도우(디스플레이) 관리 함수
 
-# mlx_new_window
+## mlx_new_window
 화면을 띄우는데 도움을 주는 함수입니다.
 
 <원형>
@@ -57,7 +58,7 @@ title : 창의 타이틀 바에 씌여징 문자열이다.
 함수의 init함수와 연결 확인 여부 를 반환 연결 실패시 non-null포인터 반환
 생성 실패시 NULL반환 
 
-# mlx_clear_window
+## mlx_clear_window
 <원형>
 ```
 int     mlx_destroy_window(void *mlx_ptr, void *wind_ptr)
@@ -71,7 +72,7 @@ miniLibx를 처음 가동하면 검은색 화면이 나타난다. 즉, 검은화
 따로 없음
 
 
-# mlx_destroy_window
+## mlx_destroy_window
 <원형>
 ```
 int	mlx_destroy_window(void	*mlx_ptr, void *wind_ptr)
@@ -85,11 +86,12 @@ mlx_clear_window와 같다.
 mlx_clear_window와 mlx_destroy_window함수 둘다 화면을 검은색으로 지우고 지정된 창을 삭제하는 역할을 합니다.
 
 
-## 픽셀로 이미를 그려주는데 도와주는 함수들
+# 픽셀로 이미를 그려주는데 도와주는 함수들
 
 miniLibx를 통해서 디스플레이에 어떻게 픽셀을 통해 원하는 화면을 표현할 수 있는지 알아보는 과정입니다. 여기서 설명하려는 함수들은 원하는 그림을 표현하는데 있어서 최적화된 함수들을 설명하겠습니다.
 
-# mlx_new_image
+
+## mlx_new_image
 ```
 void    *mlx_new_image(void *mlx_ptr, int width, int height)
 ```
@@ -102,7 +104,8 @@ void    *mlx_new_image(void *mlx_ptr, int width, int height)
 <반환값>
 - 실패시 NULL리턴
 
-# mlx_put_image_to_window
+
+## mlx_put_image_to_window
 ```
 mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y)
 ```
